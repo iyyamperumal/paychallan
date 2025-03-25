@@ -1,6 +1,31 @@
 import { useFonts } from 'expo-font';
 import { ScrollView, StyleSheet, Text, View,Image, TouchableOpacity } from 'react-native';
+import DetailsCard from './components/DetailsCard';
 
+const details = [
+  { title: 'Riding without wearing a helmet (rider/pillion rider)', price: '₹500'},
+  { title: 'Driving without wearing a seatbelt', price: '₹500'},
+  { title: 'Overloading of two-wheeler (triple riding)', price: '₹500'},
+  { title: 'Traffic signal jumping', price: '₹500'},
+  { title: 'Lane discipline offences', price: '₹500'},
+  { title: 'One way offence', price: '₹500'},
+  { title: 'Driving/Riding Without Number Plate ', price: '₹500'},
+  { title: 'Honking in silence zones', price: '₹500 - ₹1000'},
+  { title: 'Using Mobile Phone While Driving/Riding', price: '₹1000'},
+  { title: 'Offence Related to Air/Noise Pollution', price: '₹1000'},
+  { title: 'Parking in No-parking Zone', price: '₹1000'},
+  { title: 'Driving/Riding When Physically/Mentally Unfit', price: '₹1000'},
+  { title: 'Driving Rashly or Dangerously', price: '₹1000'},
+  { title: 'Not Obeying the Instructions of the Traffic Fines', price: '₹1000'},
+  { title: 'Blocking The Way for or Negligent of Emergency Vehicles Including Ambulances, Police Cars, etc.', price: '₹1000'},
+  { title: 'Violating Speed Regulations', price: '₹1000 - ₹2000'},
+  { title: 'Driving/Riding Without Valid Insurance', price: '₹1000 - ₹4000'},
+  { title: 'Riding/Driving Without a Valid Driving Licence', price: '₹1000 - ₹5000'},
+  { title: 'Misbehaviour Towards Traffic Authorities', price: '₹2000'},
+  { title: 'Racing on Public Roads', price: '₹5000'},
+  { title: 'Driving During Disqualification', price: '₹10,000'},
+  { title: 'Driving in a Drunken State', price: 'Upto ₹10,000'},
+];
 export default function App() {
   const [fontsLoaded] = useFonts({
     'Poppins': require('./assets/fonts/Poppins-Regular.ttf'),
@@ -37,140 +62,13 @@ export default function App() {
       </View>
       </View>
 
+{/* Card List for traffic fine details */}
       <View style={{justifyContent:'center', alignItems:'center', gap:10, marginBottom:10}}>
-      {/* Card List for traffic fine details */}
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Riding without wearing a helmet (rider/pillion rider)</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500</Text>
-      </View>
 
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Driving without wearing a seatbelt</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500</Text>
-      </View>
+      {details.map((detail, index) => (
+            <DetailsCard key={index} cardtitle={detail.title} cardprice={detail.price} />
+          ))}
 
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Overloading of two-wheeler (triple riding)</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Traffic signal jumping</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Lane discipline offences</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>One way offence</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Driving/Riding Without Number Plate </Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Honking in silence zones</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹500 - ₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Using Mobile Phone While Driving/Riding</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Offence Related to Air/Noise Pollution</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Parking in No-parking Zone</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Driving/Riding When Physically/Mentally Unfit</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Driving Rashly or Dangerously</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Not Obeying the Instructions of the Traffic Fines</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Blocking The Way for or Negligent of Emergency Vehicles Including Ambulances, Police Cars, etc.</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Violating Speed Regulations</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000 - ₹2000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Driving/Riding Without Valid Insurance</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000 - ₹4000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Riding/Driving Without a Valid Driving Licence</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹1000 - ₹5000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Misbehaviour Towards Traffic Authorities</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹2000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Racing on Public Roads</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹5000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Driving During Disqualification</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}>₹10,000</Text>
-      </View>
-
-      <View style={styles.card}>
-      <Text style={styles.cardtitle}>Driving in a Drunken State</Text>
-      <View style={styles.divider} />
-      <Text style={styles.cardprice}><Text color={'black'}>Upto</Text> ₹10,000</Text>
-      </View>
-      
       </View>
       </View>
       </ScrollView>
@@ -248,58 +146,5 @@ const styles = StyleSheet.create({
       // shadowOffset: { width: 5, height: 5 },
       // shadowOpacity: 1,
       // shadowRadius: 1,
-    },
-    card:{
-      width: '90%',
-      height: 64,
-      backgroundColor: '#FFFFFF',
-      borderRadius: 15,
-      borderColor: '#C7C7C71A',
-      borderWidth: 1,
-      flexDirection: 'row',
-      gap: 10,
-      alignItems: 'center',
-      //Android shadow
-      elevation:2,
-
-      // IOS shadow
-      // shadowColor: '#C7C7C71A',
-      // shadowOffset: { width: 5, height: 5 },
-      // shadowOpacity: 1,
-      // shadowRadius: 1,
-    },
-    cardtitle:{
-      color: '#393939',
-      fontSize: 14,
-      fontFamily:'Poppins',
-      fontWeight: '400',
-      justifyContent:'center',
-      flexWrap: 'wrap',
-      width:'65%',
-      height:50,
-      left:15,
-      alignItems:'center',
-      textAlignVertical:'center',
-    },
-    divider: {
-      width: 1,
-      height: 50, 
-      position: 'relative',
-      justifyContent:'center',
-      backgroundColor: '#E4E4E4', 
-      marginHorizontal: 10,
-    },
-    cardprice:{
-      color: '#1A9E75',
-      fontSize: 14,
-      width:"30%",
-      fontFamily:'Poppins-Semibold',
-      position:'static',
-      fontWeight: '500',
-      alignItems:'center',
-      justifyContent:'center',
-      marginLeft:10,
-      flexShrink:1,
-    },
-    
+    },   
 });
